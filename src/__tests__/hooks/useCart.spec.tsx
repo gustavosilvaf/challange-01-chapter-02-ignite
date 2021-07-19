@@ -135,6 +135,8 @@ describe('useCart Hook', () => {
       wrapper: CartProvider,
     });
 
+    console.log(result)
+
     act(() => {
       result.current.addProduct(productId);
     });
@@ -344,9 +346,13 @@ describe('useCart Hook', () => {
       wrapper: CartProvider,
     });
 
+        console.log(result.current.cart)
+
+
     act(() => {
       result.current.updateProductAmount({ amount: 3, productId });
     });
+
 
     await waitFor(
       () => {
